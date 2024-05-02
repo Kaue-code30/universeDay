@@ -5,7 +5,7 @@ import banner from "@/assets/Home/bannerHome.svg";
 
 export default function HomeSection() {
   return (
-    <section className="flex flex-col w-full h-full">
+    <section className="flex flex-col w-full md:h-[70vh]">
       <div className="flex justify-end w-full h-[50px]">
         <Image
           className="w-12 md:w-auto md:h-36"
@@ -16,7 +16,7 @@ export default function HomeSection() {
         />
       </div>
       <div className="md:px-36 flex md:flex-row md:items-center flex-row w-full h-full">
-        <div className="flex md:flex-row flex-col-reverse items-center md:mb-20 justify-start md:justify-between w-full">
+        <div className="flex md:flex-row flex-col-reverse items-center  justify-start md:justify-between w-full">
           <div className="flex md:items-start items-center justify-center gap-5 flex-col w-4/5 md:w-1/2 h-full">
             <h1 className="flex leading-none gap-1 text-4xl md:text-[5.2rem] text-black dark:text-white items-center justify-start font-semibold">
               UNIVERSE <div className="md:w-7 w-3 h-3 md:h-7 mt-4 md:mt-[30px] bg-[#4271D0]"></div>{" "}
@@ -44,15 +44,6 @@ export default function HomeSection() {
             />
           </div>
         </div>
-      </div>
-      <div className="flex-none bg-transparent absolute md:[display:flex] [display:none] top-[80%]">
-        <Image
-          className="w-[30%] md:w-[150px] mb-16 "
-          src={solImage.src}
-          width={100}
-          height={100}
-          alt="Imagem da lua"
-        />
       </div>
     </section>
   );
