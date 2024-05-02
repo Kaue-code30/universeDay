@@ -8,6 +8,7 @@ export default function HomeSection() {
     <section className="flex flex-col w-full md:h-[70vh]">
       <div className="flex justify-end w-full h-[50px]">
         <Image
+          quality={1000}
           className="w-12 md:w-auto md:h-36"
           src={luaImage.src}
           width={100}

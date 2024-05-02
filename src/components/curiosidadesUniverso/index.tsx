@@ -3,7 +3,7 @@ import banner from "@/assets/curiosidades/curiosidades.svg";
 
 export default function CuriosidadesUniverse() {
   return (
-    <section className="flex items-center justify-center -mt-16 md:h-[50vh] w-full">
+    <section className="flex items-center justify-center md:mb-52 -mt-16 md:h-[50vh] w-full">
       <div className="flex flex-col gap-10 md:gap-20 items-center justify-start max-w-[1996px] w-[90%] h-full ">
         <div className="w-full flex items-end justify-center ">
           <h1 className="md:text-6xl text-center flex items-center justify-center md:w-full  text-4xl text-black dark:text-white font-bold">
