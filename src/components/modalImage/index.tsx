@@ -19,12 +19,15 @@ export default function ModalImage({ data, isPending, closeModal }: content) {
     [year, month, day] = dateString.split("-");
   }
   return (
-    <div className=" bg-cover bg-no-repeat bg-black opacity-95 transition-transform fixed w-full flex-col flex items-center justify-center  top-0 shadow-lg z-50 h-full  mt-0 overflow-hidden  ">
-      <div className="w-[90%] h-[90%]">
-        <div className="w-[90%] h-20 flex items-center justify-end  ">
+    <div className=" bg-cover bg-no-repeat bg-black opacity-95 transition-transform fixed w-full flex-col flex items-center justify-center  top-0 shadow-lg z-50 h-full  mt-0  ">
+      <div
+        style={{ backgroundImage: `url(${bannerBackground.src})` }}
+        className="w-full z-50 h-full md:p-10"
+      >
+        <div className="w-[90%] h-10 md:h-20 flex items-center justify-end  ">
           <div
             onClick={closeModal}
-            className="flex items-center hover:scale-95 transition-all justify-center font-bold w-8 h-8 text-black bg-white rounded-full"
+            className="flex items-center hover:scale-95 transition-all justify-center font-bold w-5 md:w-8 md:h-8 text-black bg-white rounded-full"
           >
             <IoMdCloseCircle className="w-full  h-full text-red-600" />
           </div>
@@ -33,8 +36,8 @@ export default function ModalImage({ data, isPending, closeModal }: content) {
           <h1 className="animate-pulse text-white">carregando...</h1>
         )}
         {!isPending && (
-          <div className="flex bg-black flex-row w-full bg-contain rounded-2xl bg-no-repeat h-[90%]">
-            <div className="flex items-center justify-center w-1/2 h-full">
+          <div className="flex  items-center justify-start md:justify-center flex-col md:flex-row w-full bg-contain rounded-2xl bg-no-repeat h-[90%]">
+            <div className="flex items-center justify-center  w-4/5 md:w-1/2 h-1/4 md:h-full">
               <Image
                 className="w-4/5"
                 src={`${data?.hdurl}`}
@@ -45,8 +48,8 @@ export default function ModalImage({ data, isPending, closeModal }: content) {
                 quality={1000}
               />
             </div>
-            <div className="flex flex-col items-start gap-4 justify-center w-1/2 h-full">
-              <h2 className=" w-[90%] text-3xl font-bold text-white">
+            <div className="flex flex-col items-center md:items-start gap-4 justify-center w-4/5 md:w-1/2 h-full md:h-full">
+              <h2 className=" w-[90%] md:text-left text-center text-xl md:text-3xl font-bold text-white">
                 {data?.title}
               </h2>
               {data?.copyright ? (
@@ -54,12 +57,12 @@ export default function ModalImage({ data, isPending, closeModal }: content) {
                   Créditos de imagem: {data?.copyright}
                 </h3>
               ) : (
-                <h3 className="text-white">
+                <h3 className="text-sm text-white">
                   Data: {day}/{month}/{year}
                 </h3>
               )}
 
-              <p className=" text-[0.85rem]  w-[90%] text-white">
+              <p className=" text-[0.6rem] md:text-left text-center md:text-[0.85rem] overflow-auto  w-[90%] text-white">
                 <span className="font-bold">Explicação:</span>{" "}
                 {data?.explanation}
               </p>
