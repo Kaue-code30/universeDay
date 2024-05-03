@@ -15,7 +15,7 @@ export default function ImagemAstronomicaDoDia() {
 
   return (
     <section
-      className="flex justify-center items-center flex-col h-full  w-full md:h-[80vh]"
+      className="flex justify-center items-center -mt-20 flex-col h-full  w-full md:h-[80vh]"
     >
       {modalOpen && (
         <ModalImage

@@ -24,7 +24,7 @@ export default function ModalImage({ data, isPending, closeModal }: content) {
         style={{ backgroundImage: `url(${bannerBackground.src})` }}
         className="w-full z-50 h-full md:p-10"
       >
-        <div className="w-[90%] h-10 md:h-20 flex items-center justify-end  ">
+        <div className="w-[90%] h-20 md:h-20 flex items-center justify-end  ">
           <div
             onClick={closeModal}
             className="flex items-center hover:scale-95 transition-all justify-center font-bold w-5 md:w-8 md:h-8 text-black bg-white rounded-full"
@@ -48,7 +48,7 @@ export default function ModalImage({ data, isPending, closeModal }: content) {
                 quality={1000}
               />
             </div>
-            <div className="flex flex-col items-center md:items-start gap-4 justify-center w-4/5 md:w-1/2 h-full md:h-full">
+            <div className="flex flex-col items-center md:items-start gap-4 justify-center w-4/5 md:w-1/2 h-[50%] md:h-full">
               <h2 className=" w-[90%] md:text-left text-center text-xl md:text-3xl font-bold text-white">
                 {data?.title}
               </h2>
@@ -62,7 +62,7 @@ export default function ModalImage({ data, isPending, closeModal }: content) {
                 </h3>
               )}
 
-              <p className=" text-[0.6rem] md:text-left text-center md:text-[0.85rem] overflow-auto  w-[90%] text-white">
+              <p className=" text-[0.6rem] md:text-left text-center md:text-[0.85rem] h-full overflow-auto  w-[90%] text-white">
                 <span className="font-bold">Explicação:</span>{" "}
                 {data?.explanation}
               </p>
