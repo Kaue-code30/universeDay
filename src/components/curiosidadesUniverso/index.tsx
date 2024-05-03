@@ -12,7 +12,7 @@ export default function CuriosidadesUniverse() {
         </div>
         <div className=" w-full h-full flex md:flex-row flex-col justify-center items-start ">
           <div className="flex flex-col justify-center gap-10 pb-10 items-center md:w-1/4  h-full">
-            <div className="flex w-full gap-5 h-1/2">
+            <div className="flex hover:scale-100 hover:p-1 transition-all hover:rounded-2xl hover:left-1/4  w-full gap-5 h-1/2">
               <div className="flex items-center justify-center shadow text-3xl font-bold text-white w-16 h-12 md:w-20 md:h-16  bg-[#4271D0] rounded-full">
                 1
               </div>

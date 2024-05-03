@@ -3,8 +3,7 @@ interface content {
   backgroundLight: string;
 }
 
-
-export default function CtaOne({backgroundDark, backgroundLight}:content) {
+export default function CtaOne({ backgroundDark, backgroundLight }: content) {
   return (
     <section className="h-[40vh] mt-3 md:h-[100vh] w-full">
       <div
