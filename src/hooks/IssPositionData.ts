@@ -18,14 +18,16 @@ export function IssPositionDayData() {
         const query = useQuery<AxiosResponse<IssPositionData>>({
             queryFn: fetchData,
             queryKey: ['IssPositionData'],
-            staleTime: 5000
+            staleTime: 5000,
+            gcTime: 5000
+
         });
         return {
             ...query,
             contentData: query.data?.data,
-            isPending: query.isLoading,
+            isPendingIss: query.isPending,
         };
     }
-    return { data: null, isPendingIss: false };
+    return { data: null, isPendingIss: true };
 }
 

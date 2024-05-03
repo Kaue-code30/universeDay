@@ -6,8 +6,17 @@ import { Icon } from "leaflet";
 import banner from "@/assets/satelite.svg";
 import Image from "next/image";
 
-export default async function IssPosition() {
-  const { data, isPendingIss } = await IssPositionDayData();
+export default function IssPosition() {
+  const { data, isPendingIss } = IssPositionDayData();
+  console.log(isPendingIss);
+
+  const objectData = {
+    iss_position: {
+      latitude: data ? data.data.iss_position.latitude : "0",
+      longitude: data ? data.data.iss_position.longitude : "0",
+    },
+  };
+  const content = objectData;
 
   const redIcon = new Icon({
     iconUrl:
@@ -22,7 +31,13 @@ export default async function IssPosition() {
     <section className="flex items-center justify-center w-full pb-48 -mt-38 h-[80vh]">
       <div className="flex flex-row-reverse max-w-[1996px] w-[90%] h-full ">
         <div className="w-1/2 flex items-center justify-center h-full">
-          <Image className="w-full" src={banner} alt="" width={100} height={100} />
+          <Image
+            className="w-full"
+            src={banner}
+            alt="Planet"
+            width={100}
+            height={100}
+          />
         </div>
 
         <div className="w-1/2 h-full flex flex-col gap-5 items-center justify-center">
@@ -44,28 +59,30 @@ export default async function IssPosition() {
             </Link>
           </span>
           <div>
-            <MapContainer
-              center={[
-                parseFloat(data ? data.data.iss_position.latitude : "0"),
-                parseFloat(data ? data.data.iss_position.longitude : "0"),
-              ]}
-              zoom={1}
-              scrollWheelZoom={false}
-            >
-              <TileLayer
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-              />
-              <Marker
-                position={[
-                  parseFloat(data ? data.data.iss_position.latitude : "0"),
-                  parseFloat(data ? data.data.iss_position.longitude : "0"),
+            {data && (
+              <MapContainer
+                center={[
+                  parseFloat(content ? content.iss_position.latitude : "0"),
+                  parseFloat(data ? content.iss_position.latitude : "0"),
                 ]}
-                icon={redIcon}
+                zoom={1}
+                scrollWheelZoom={false}
               >
-                <Popup>Olá eu sou a ISS.</Popup>
-              </Marker>
-            </MapContainer>
+                <TileLayer
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Marker
+                  position={[
+                    parseFloat(content ? content.iss_position.latitude : "0"),
+                    parseFloat(data ? content.iss_position.latitude : "0"),
+                  ]}
+                  icon={redIcon}
+                >
+                  <Popup>Olá eu sou a ISS.</Popup>
+                </Marker>
+              </MapContainer>
+            )}
           </div>
         </div>
       </div>
