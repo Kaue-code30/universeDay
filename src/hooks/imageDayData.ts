@@ -22,7 +22,7 @@ export function imageDayData() {
         return {
             ...query,
             contentData: query.data?.data,
-             isPending: query.isPending
+             isPending: query.isLoading
         }
     }
     return { data: null, isPending: false };
