@@ -41,6 +41,8 @@ export default function ModalImage({ data, isPending, closeModal }: content) {
                 alt="Image today"
                 width={100}
                 height={100}
+                priority
+                quality={1000}
               />
             </div>
             <div className="flex flex-col items-start gap-4 justify-center w-1/2 h-full">
