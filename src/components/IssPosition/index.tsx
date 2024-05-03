@@ -59,7 +59,9 @@ export default function IssPosition() {
             </Link>
           </span>
           <div>
-            {data && (
+            {isPendingIss === true ? (
+              <h1>carregando</h1>
+            ) : (
               <MapContainer
                 center={[
                   parseFloat(content ? content.iss_position.latitude : "0"),
