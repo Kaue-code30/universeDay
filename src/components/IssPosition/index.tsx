@@ -6,8 +6,8 @@ import { Icon } from "leaflet";
 import banner from "@/assets/satelite.svg";
 import Image from "next/image";
 
-export default function IssPosition() {
-  const { data, isPendingIss } = IssPositionDayData();
+export default async function IssPosition() {
+  const { data, isPendingIss } = await IssPositionDayData();
 
   const redIcon = new Icon({
     iconUrl:
