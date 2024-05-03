@@ -19,13 +19,7 @@ export default function ModalImage({ data, isPending, closeModal }: content) {
     [year, month, day] = dateString.split("-");
   }
   return (
-    <div
-      style={{
-        backgroundImage: `url(${bannerBackground.src})`,
-        backgroundBlendMode: "darken",
-      }}
-      className=" bg-cover bg-no-repeat transition-transform fixed w-full flex-col flex items-center justify-center  top-0 shadow-lg rounded-md z-50 h-full  mt-0 overflow-hidden  "
-    >
+    <div className=" bg-cover bg-no-repeat bg-black opacity-95 transition-transform fixed w-full flex-col flex items-center justify-center  top-0 shadow-lg z-50 h-full  mt-0 overflow-hidden  ">
       <div className="w-[90%] h-[90%]">
         <div className="w-[90%] h-20 flex items-center justify-end  ">
           <div
@@ -39,7 +33,7 @@ export default function ModalImage({ data, isPending, closeModal }: content) {
           <h1 className="animate-pulse text-white">carregando...</h1>
         )}
         {!isPending && (
-          <div className="flex flex-row w-full bg-contain rounded-2xl bg-no-repeat h-[90%]">
+          <div className="flex bg-black flex-row w-full bg-contain rounded-2xl bg-no-repeat h-[90%]">
             <div className="flex items-center justify-center w-1/2 h-full">
               <Image
                 className="w-4/5"
