@@ -60,7 +60,7 @@ export default function IssPosition() {
           </span>
           <div>
             {isPendingIss === true ? (
-              <h1>carregando</h1>
+              <h1 className="animate-pulse">carregando...</h1>
             ) : (
               <MapContainer
                 center={[
