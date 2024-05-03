@@ -3,10 +3,11 @@ import ModalImage from "../modalImage";
 import banner from "@/assets/solarSystem.svg";
 import { imageDayData } from "@/hooks/imageDayData";
 import Image from "next/image";
+import { IssPositionDayData } from "@/hooks/IssPositionData";
 
 export default function ImagemAstronomicaDoDia() {
-  const { data, isPending } = imageDayData();
-
+  const { data, isPending } = imageDayData();  
+  
   const [modalOpen, setModalOpen] = useState(false);
 
   const handleOpen = () => {
@@ -15,7 +16,7 @@ export default function ImagemAstronomicaDoDia() {
 
   return (
     <section
-      className="flex justify-center items-center -mt-20 flex-col h-full  w-full md:h-[80vh]"
+      className="flex justify-center items-center  flex-col h-full  w-full md:h-[80vh]"
     >
       {modalOpen && (
         <ModalImage

@@ -1,7 +1,8 @@
 import Image from "next/image";
 import banner from "@/assets/curiosidades/curiosidades.svg";
+import { IssPositionDayData } from "@/hooks/IssPositionData";
 
-export default function CuriosidadesUniverse() {
+export default function CuriosidadesUniverse() {  
   return (
     <section className="flex items-center justify-center md:mb-52 -mt-16 md:h-[50vh] w-full">
       <div className="flex flex-col gap-10 md:gap-20 items-center justify-start max-w-[1996px] w-[90%] h-full ">

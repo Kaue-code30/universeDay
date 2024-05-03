@@ -1,12 +1,27 @@
 import Image from "next/image";
 import luaImage from "@/assets/Home/Lua.svg";
-import solImage from "@/assets/Home/sol.svg";
 import banner from "@/assets/Home/bannerHome.svg";
 
 export default function HomeSection() {
   return (
     <section className="flex flex-col w-full md:h-[70vh]">
-      <div className="flex justify-end w-full h-[50px]">
+      <div className="flex  justify-between w-full h-[50px]">
+        <div className="h-24 z-10 flex pl-36 items-center ">
+          <ul className="flex gap-3">
+            <li className=" cursor-pointer font-normal hover:scale-95 rounded hover:text-[#4271D0] ">
+              Curiosidades
+            </li>
+            <li className="cursor-pointer font-normal hover:scale-95 rounded hover:text-[#4271D0]  ">
+              Localização ISS
+            </li>
+            <li className="cursor-pointer font-normal hover:scale-95 rounded hover:text-[#4271D0]  ">
+              Foto astronômica
+            </li>
+            <li className="cursor-pointer font-normal hover:scale-95 rounded hover:text-[#4271D0]  ">
+              Quiz
+            </li>
+          </ul>
+        </div>
         <Image
           quality={1000}
           className="w-12 md:w-auto md:h-36"
@@ -20,7 +35,8 @@ export default function HomeSection() {
         <div className="flex md:flex-row flex-col-reverse items-center  justify-start md:justify-between w-full">
           <div className="flex md:items-start items-center justify-center gap-5 flex-col w-4/5 md:w-1/2 h-full">
             <h1 className="flex leading-none gap-1 text-4xl md:text-[5.2rem] text-black dark:text-white items-center justify-start font-semibold">
-              UNIVERSE <div className="md:w-7 w-3 h-3 md:h-7 mt-4 md:mt-[30px] bg-[#4271D0]"></div>{" "}
+              UNIVERSE{" "}
+              <div className="md:w-7 w-3 h-3 md:h-7 mt-4 md:mt-[30px] bg-[#4271D0]"></div>{" "}
               DAY
             </h1>
             <p className=" md:text-sm text-[0.95rem] md:text-left text-center dark:text-white w-full md:w-3/4 text-black">
