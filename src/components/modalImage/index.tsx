@@ -24,7 +24,7 @@ export default function ModalImage({ data, isPending, closeModal }: content) {
         backgroundImage: `url(${bannerBackground.src})`,
         backgroundBlendMode: "darken",
       }}
-      className=" bg-cover bg-no-repeat transition-transform opacity-5 fixed w-full flex-col flex items-center justify-center  top-0 shadow-lg rounded-md z-50 h-full  mt-0 overflow-hidden  "
+      className=" bg-cover bg-no-repeat transition-transform fixed w-full flex-col flex items-center justify-center  top-0 shadow-lg rounded-md z-50 h-full  mt-0 overflow-hidden  "
     >
       <div className="w-[90%] h-[90%]">
         <div className="w-[90%] h-20 flex items-center justify-end  ">
