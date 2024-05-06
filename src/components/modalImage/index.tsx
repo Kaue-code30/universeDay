@@ -42,7 +42,7 @@ export default function ModalImage({ data, isPending, closeModal }: content) {
             <div className="flex items-center justify-center  w-4/5 md:w-1/2 h-1/4 md:h-full">
               {
                 data?.url.startsWith("https://www.youtube.com/")  ? (
-                  <iframe className="w-4/5 h-full border border-white rounded-lg" src={data?.url}/>
+                  <iframe className="w-4/5 h-1/2 border border-white rounded-lg" src={data?.url}/>
                 ) : <Image
                 className="w-4/5"
                 src={`${data?.url}`}
@@ -69,7 +69,7 @@ export default function ModalImage({ data, isPending, closeModal }: content) {
                 </h3>
               )}
 
-              <p className=" text-[0.6rem] md:text-left text-center md:text-[0.85rem] md:h-1/2 h-full overflow-auto  w-[90%] text-white">
+              <p className=" text-[0.6rem] md:text-left text-center md:text-[0.85rem] md:h-auto h-full overflow-auto  w-[90%] text-white">
                 <span className="font-bold">Explicação:</span>{" "}
                 {data?.explanation}
               </p>

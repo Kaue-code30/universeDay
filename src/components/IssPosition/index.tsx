@@ -8,7 +8,7 @@ import Image from "next/image";
 
 export default function IssPosition() {
   const { data, isPendingIss } = IssPositionDayData();
-  console.log(isPendingIss);
+  console.log(data?.data.iss_position);
 
   const objectData = {
     iss_position: {

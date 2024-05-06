@@ -8,7 +8,8 @@ const API_URL = 'http://api.open-notify.org/iss-now.json'
 
 const fetchData = async (): Promise<AxiosResponse<IssPositionData>> => {
     const response = await axios.get<IssPositionData>(API_URL)
-
+    console.log(response.data.iss_position);
+    
 
     return response;
 }
