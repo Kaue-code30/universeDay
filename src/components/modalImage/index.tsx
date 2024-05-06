@@ -10,6 +10,8 @@ interface content {
 }
 
 export default function ModalImage({ data, isPending, closeModal }: content) {
+  console.log(data?.url);
+  
   const dateString: string | undefined = data?.date;
   let day: string = "";
   let month: string = "";
@@ -38,22 +40,27 @@ export default function ModalImage({ data, isPending, closeModal }: content) {
         {!isPending && (
           <div className="flex  items-center justify-start md:justify-center flex-col md:flex-row w-full bg-contain rounded-2xl bg-no-repeat h-[90%]">
             <div className="flex items-center justify-center  w-4/5 md:w-1/2 h-1/4 md:h-full">
-              <Image
+              {
+                data?.url.startsWith("https://www.youtube.com/")  ? (
+                  <iframe className="w-4/5 h-full border border-white rounded-lg" src={data?.url}/>
+                ) : <Image
                 className="w-4/5"
-                src={`${data?.hdurl}`}
+                src={`${data?.url}`}
                 alt="Image today"
                 width={100}
                 height={100}
                 priority
                 quality={1000}
               />
+              }
+              
             </div>
-            <div className="flex flex-col items-center md:items-start gap-4 justify-center w-4/5 md:w-1/2 h-[50%] md:h-full">
+            <div className="flex flex-col items-center md:justify-center md:items-start gap-4 justify-center w-4/5 md:w-1/2 h-[50%] md:h-full">
               <h2 className=" w-[90%] md:text-left text-center text-xl md:text-3xl font-bold text-white">
                 {data?.title}
               </h2>
               {data?.copyright ? (
-                <h3 className="text-white">
+                <h3 className="text-white w-4/5">
                   Créditos de imagem: {data?.copyright}
                 </h3>
               ) : (
@@ -62,7 +69,7 @@ export default function ModalImage({ data, isPending, closeModal }: content) {
                 </h3>
               )}
 
-              <p className=" text-[0.6rem] md:text-left text-center md:text-[0.85rem] h-full overflow-auto  w-[90%] text-white">
+              <p className=" text-[0.6rem] md:text-left text-center md:text-[0.85rem] md:h-1/2 h-full overflow-auto  w-[90%] text-white">
                 <span className="font-bold">Explicação:</span>{" "}
                 {data?.explanation}
               </p>
